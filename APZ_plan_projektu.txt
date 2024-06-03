@@ -1,0 +1,49 @@
+Uwagi:
+
+1. Wszystkie pliki muszą być w formacie .php
+
+2. Wszystkie strony, które łączą się  zMySql muszą zawierać poniższy kod na początku kodu Php:
+	<?php include('db_config.php'); ?>
+	- dbname = "ankieta";
+	
+3. zmienne sesyjne: 
+	$_SESSION["ADMIN_LOGGED_IN"]=1  # jeżeli zalogowany jest admin
+	lub $_SESSION["USER_LOGGED_IN"]=1   # jeżeli zalogowany jest zwykły użytkownik
+	$_SESSION["ADMIN_ID"] # Przechowuje admin_id obecnie zalogowanego admina
+	$_SESSION["USER_ID"] # Przechowuje user_id obecnie zalogowanego użytkownika.
+
+.................................................................................................................................
+
+Aktualny status zadań:
+
+1. login_authentication.php  -->TO DO  :GP  
+
+ - przekierowuje do admin_homepage.php lub user_homepage.php w zależności od zalogowanego użytkownika
+	
+ - ustawia zmienne sesyjne: $_SESSION["ADMIN_LOGGED_IN"] i $_SESSION["USER_LOGGED_IN"]
+
+2. login.php 	-->TO DO	:AT: weryfikacja użytkownika/hasła z bazy danych.
+3. signup_page.php:  ŁP/ AT/ GP
+
+4. admin_homepage.php	-->TO DO	: ŁP/ AT/ GP
+5. admin_create_survey.php	-->TO DO	: ŁP : Tworzy nową ankietę
+5.1 admin_add_questions.php: Sri -->TO DO  :GP : Dodaje pytania do bazy danych
+5.2 admin_survey_link_questions.php: GP -->TO DO     : Wyświetla listę pytań, listę ankiet i dodaje pytania do ankiet
+6. admin_view_survey_list.php	: GP -> TO DO
+7 admin_view_survey_results.php	: GP -> TO DO
+
+8. user_homepage.php	: AT   : Prosta strona
+9. user_view_survey_list.php : ŁT -> TO DO : Wyświetla ankiety do wypełnienia lub zakończone
+10 user_take_survey.php : AT -> TO DO 
+11. user_submit_survey.php : ŁP ->  TO DO : Odpwiedzi do mySql i komunikat o ukończeniu ankietyInserts response in mysql & shows survey completion is successful.
+12. signup_page.php: ŁP/ AT/ GP
+
+
+13. logout.php : Kończy sesje i przekierowuje do index.php
+
+
+
+
+
+
+
