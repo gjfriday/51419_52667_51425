@@ -1,15 +1,13 @@
 <?php
-//include('/ankieta/config.php');
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ankieta";
+include("config/config.php");
+include("view/header.php");
+include("view/admin_view.php");
 
 ?>
 
 <div id="surveyList">
-
+  
 <?php
 
 $con = mysqli_connect($servername, $username, $password, $dbname);
@@ -39,3 +37,20 @@ echo "<br> Liczba ankiet: ".$survey_count."<br>";
 
 $con->close();
 ?>
+
+Wybierz ankietę i naciśnij "Wyświetl", żeby zobaczyć wyniki ankiety.
+<form  method="post" action="admin_view_survey_results.php">
+  <select name="survey_id_list">
+<?php for ($i=1; $i<=$survey_count; $i++)
+	{?>
+    <option value="<?php echo "$survey_id_array[$i]";?>"><?php echo "$survey_names_array[$i]";?></option>
+    <?php
+	}?>
+  </select>
+
+  <br><br>
+  <input type="submit"  value="Wyświetl">
+</form>
+</div>
+</body>
+</html>
