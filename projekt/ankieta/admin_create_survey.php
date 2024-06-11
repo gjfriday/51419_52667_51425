@@ -1,10 +1,8 @@
 <?php
-// include('/ankieta/config.php'); // Nie działa mi
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ankieta";
+include("config/config.php");
+include("view/header.php");
+include("view/admin_view.php");
 
 $survey_nameErr = "";
 $survey_name = "";
@@ -20,11 +18,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    $survey_description=$_POST["survey_description"];
 }
 ?>
-  
-<!DOCTYPE html>
-<html>
-  
+
+    <form id="createSurvey" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      
+      Podaj nazwę ankiety:
+      <input type="text" name="survey_name" value="<?php echo $survey_name;?>">
+        <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { if ($survey_name == "") { ?>
+        <span class="error">* <?php echo $survey_nameErr;?></span>
+      <?php } }?>
+      <br><br>
+
+      Opis ankiety:
+      <input type="text" name="survey_description" value="<?php echo $survey_description;?>">
+      <br><br>
+
+      <input type="submit" value="Dodaj">
+      <br><br>
+    </form>
+
   <?php
+
   if ($survey_name != "") {
 
     $con = mysqli_connect($servername, $username, $password, $dbname);
@@ -47,6 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   mysqli_close($con);
   }
   ?>
+
+  </body>
+</html>
+
 
   
 </html>
