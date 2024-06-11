@@ -9,21 +9,79 @@
 -->
 
 <?php
-sesion start();
-// include ("/ankieta/config.php");
+
+session_start();
+
+include("config/config.php");
 
 $_SESSION["IS_VALID_LOGIN"]= 0;
 $_SESSION["ADMIN_ID"]= -1;
 $_SESSION["USER_ID"]= -1;
-
-//ter paramerty trzeba będzie usunąć na rzecz pliku z config.php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ankieta";
 
 $con = mysqli_connect($servername, $username, $password, $dbname);
 if(!$con)
 {
     die("Nie nawiązano połączenia z bazą danych: " . mysqli_connect_error());
 }
+
+
+	$name=$_POST["email"];
+	$pass=$_POST["password"];
+
+	$admin_flag=0;
+	$user_flag=0;
+	
+	$result = mysqli_query($con, "SELECT * FROM tbl_admin");
+
+	while($row = mysqli_fetch_array($result))
+	{
+		if($name==$row[1] && $pass==$row[2])
+		{
+			$admin_flag=1;
+			$_SESSION["ADMIN_ID"]= $row[0];
+			$_SESSION["IS_VALID_LOGIN"]=1;
+		break;
+		}
+	}
+	
+	$result = mysqli_query($con, "SELECT * FROM tbl_users");
+	while($row = mysqli_fetch_array($result))
+	{
+		if($name==$row[1] && $pass==$row[2])
+		{
+			$user_flag=1;
+			$_SESSION["USER_ID"]= $row[0];
+			$_SESSION["IS_VALID_LOGIN"]=1;
+		break;
+		}
+	}
+	
+	if($admin_flag==1)
+	{			
+			$_SESSION["ADMIN_LOGGED_IN"]=1;
+			$_SESSION["USER_LOGGED_IN"]=0;		
+	?>
+	 
+	<script type="text/javascript">
+	 window.location="admin_homepage.php";
+	</script>
+	<?php
+	} else if($user_flag==1)
+	{			
+			$_SESSION["USER_LOGGED_IN"]=1;
+			$_SESSION["ADMIN_LOGGED_IN"]=0;
+	?>
+	<script type="text/javascript">
+	 window.location="user_homepage.php";
+	</script>
+	<?php
+	} else
+	{
+	$_SESSION["ADMIN_LOGGED_IN"]=0;
+	$_SESSION["USER_LOGGED_IN"]=0;
+	?>
+	<script type="text/javascript">
+		window.location="index.php";
+	</script>
+	<?php
+	}
