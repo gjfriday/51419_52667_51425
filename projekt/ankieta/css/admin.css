@@ -1,0 +1,36 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+#logo{
+  margin-left: 14%;
+  margin-top: 0.5%;
+}
+
+#greetings{
+  margin-left: 10%;
+  margin-top: 10%;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+#createSurvey{
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+#addQuestions{
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+#contentLinkQ{
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+#surveyList{
+  margin-top: 5%;
+  margin-left: 5%;
+}
