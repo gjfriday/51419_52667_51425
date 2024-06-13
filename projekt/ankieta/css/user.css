@@ -1,0 +1,23 @@
+#logo{
+  margin-left: 28.5%;
+  margin-top: 0.5%;
+}
+
+#greetings{
+  margin-left: 10%;
+  margin-top: 10%;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+#surveyList{
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+#results{
+    height:150px;
+    width:500px;
+    margin-left: 34%;
+    margin-top: 10%;
+}
