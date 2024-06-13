@@ -16,7 +16,9 @@ include("config/config.php");
 
 $_SESSION["IS_VALID_LOGIN"]= 0;
 $_SESSION["ADMIN_ID"]= -1;
+$_SESSION["ADMIN_NAME"]= -1;
 $_SESSION["USER_ID"]= -1;
+$_SESSION["USER_NAME"]= -1;
 
 $con = mysqli_connect($servername, $username, $password, $dbname);
 if(!$con)
@@ -39,7 +41,9 @@ if(!$con)
 		{
 			$admin_flag=1;
 			$_SESSION["ADMIN_ID"]= $row[0];
+			$_SESSION["ADMIN_NAME"] = $row[3];
 			$_SESSION["IS_VALID_LOGIN"]=1;
+			session_regenerate_id(true); //regeneruje ID sesji 
 		break;
 		}
 	}
@@ -51,37 +55,30 @@ if(!$con)
 		{
 			$user_flag=1;
 			$_SESSION["USER_ID"]= $row[0];
+			$_SESSION["USER_NAME"] = $row[3];
 			$_SESSION["IS_VALID_LOGIN"]=1;
+			session_regenerate_id(true);
 		break;
 		}
 	}
 	
-	if($admin_flag==1)
-	{			
-			$_SESSION["ADMIN_LOGGED_IN"]=1;
-			$_SESSION["USER_LOGGED_IN"]=0;		
-	?>
-	 
-	<script type="text/javascript">
-	 window.location="admin_homepage.php";
-	</script>
-	<?php
-	} else if($user_flag==1)
-	{			
-			$_SESSION["USER_LOGGED_IN"]=1;
-			$_SESSION["ADMIN_LOGGED_IN"]=0;
-	?>
-	<script type="text/javascript">
-	 window.location="user_homepage.php";
-	</script>
-	<?php
-	} else
-	{
-	$_SESSION["ADMIN_LOGGED_IN"]=0;
-	$_SESSION["USER_LOGGED_IN"]=0;
-	?>
-	<script type="text/javascript">
-		window.location="index.php";
-	</script>
-	<?php
+	if ($admin_flag == 1) {
+		$_SESSION["ADMIN_LOGGED_IN"] = 1;
+		$_SESSION["USER_LOGGED_IN"] = 0;
+		mysqli_close($con);
+		header("Location: admin_homepage.php");
+		exit();
+	} elseif ($user_flag == 1) {
+		$_SESSION["USER_LOGGED_IN"] = 1;
+		$_SESSION["ADMIN_LOGGED_IN"] = 0;
+		mysqli_close($con);
+		header("Location: user_homepage.php");
+		exit();
+	} else {
+		$_SESSION["IS_VALID_LOGIN"] = 0;
+		$_SESSION["ADMIN_LOGGED_IN"] = 0;
+		$_SESSION["USER_LOGGED_IN"] = 0;
+		mysqli_close($con);
+		header("Location: index.php");
+		exit();
 	}
