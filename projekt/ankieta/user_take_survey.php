@@ -1,20 +1,17 @@
 <?php
 
-session_start();
+	session_start();
 
-//include('/ankiety/config.php');
+	include("config/config.php");
+	include("view/header.php");
+	include("view/user_view.php");
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ankieta";
-
-$userId = $_SESSION["USER_ID"];
+	$userId = $_SESSION["USER_ID"];
 
 ?>
 
-<!DOCTYPE html>
-<html>
+
+		<div id="surveyList">
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") // do końca php
@@ -86,5 +83,6 @@ mysqli_close($con);
 
 ?>
 
-  
+		</div>
+	</body>
 </html>
