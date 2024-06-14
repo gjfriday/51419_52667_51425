@@ -31,9 +31,9 @@ Pliki można również umieścić na wybranym serwerze.
 
 <h3>IV. Działanie</h3>
 
-<b>Rejestracja użytkownika:</b> Podanie danych -> Zatwierdzenie -> Przekierowanie do strony logowania<br>
-<b>Użytkownik: Logowanie użytkownika:</b> Wpisanie danych -> Przejście do strony użytkownika -> Wypełnij ankietę <br>
-<b>Administrator: Logowanie administratora:</b> Wpisanie danych -> Przejście do strony administratora<br>
-<b>Administrator: Krok 1(Utworzenie ankiety):</b> Wybierz "Utwórz ankietę" -> Podaj dane -> Utwórz<br>
-<b>Administrator: Krok 2(Dodawanie pytań):</b> Wybierz "Dodaj pytania" -> Podaj dane -> Dodaj<br>
-<b>Administrator: Krok 3(Przyporządkowanie pytań):</b> Wybierz "Przyporządkowanie pytań" -> Wybierz nr  -> Dodaj<br>
+<b>Rejestracja użytkownika:</b> Podanie danych -> Zatwierdzenie -> Przekierowanie do strony logowania<br><br>
+<b>Użytkownik: Logowanie użytkownika:</b> Wpisanie danych -> Przejście do strony użytkownika -> Wypełnij ankietę <br><br>
+<b>Administrator: Logowanie administratora:</b> Wpisanie danych -> Przejście do strony administratora<br><br>
+<b>Administrator: Krok 1(Utworzenie ankiety):</b> Wybierz "Utwórz ankietę" -> Podaj dane -> Utwórz<br><br>
+<b>Administrator: Krok 2(Dodawanie pytań):</b> Wybierz "Dodaj pytania" -> Podaj dane -> Dodaj<br><br>
+<b>Administrator: Krok 3(Przyporządkowanie pytań):</b> Wybierz "Przyporządkowanie pytań" -> Wybierz nr  -> Dodaj<br><br>
