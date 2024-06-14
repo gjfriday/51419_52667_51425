@@ -17,13 +17,11 @@ if(!$con)
 mysqli_select_db($con, $dbname);
 
 // Pobieranie listy ankiet
-echo "<table width='386' border='1'> 
+echo "<table width='1000' border='1'> 
       <tr>
         <th>Numer</th>
         <th>Nazwa</th>
         <th>Opis</th>
-        <th>Start</th>
-        <th>Koniec</th>
       </tr>";
 echo "<caption> <b> Lista ankiet </b> </caption>";
 	$sql="SELECT * FROM tbl_surveys";
@@ -35,14 +33,14 @@ echo "<caption> <b> Lista ankiet </b> </caption>";
 		$survey_count++;
 		$survey_names_array[$survey_count] = $row['survey_name'];
 		$survey_id_array[$survey_count] = $row[0];
-		echo "<tr><td>".$row[0]."</td><td>".$row['survey_name']."</td><td>".$row['survey_description']."</td><td>".$row['survey_open_date']."</td><td>".$row['survey_close_date']."</td></tr>";
+		echo "<tr><td>".$row[0]."</td><td>".$row['survey_name']."</td><td>".$row['survey_description']."</td></tr>";
     }
 echo "</table>";
 echo "<br> Liczba ankiet: ".$survey_count."<br>";
 
 
 // Pobieranie listy pytań
-echo "<table width='386' border='1'> <tr><th>Question Id</th><th>Question</th></tr>";
+echo "<table width='1000' border='1'> <tr><th>Nr pytania</th><th>Treść pytania</th></tr>";
 echo "<caption> <b> Lista pytań </b> </caption>";
 	$sql2="SELECT * FROM tbl_questions";
     $result2 = mysqli_query($con, $sql2);
@@ -87,26 +85,27 @@ echo "<br> Liczba pytań: ".$questions_count."<br>";
 
 <?php
 
+// Dodawanie question_id i survey_id do tbl_survey_questions.
 $question_id = $survey_id = -1;
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
 	$question_id=$_POST["question_id_list"];
 	$survey_id=$_POST["survey_id_list"];
-	
+	#echo "DEBUG: question_id: ".$question_id. "survey_id: ".$survey_id."<br>";
 
 	$sql2="SELECT * FROM tbl_survey_questions WHERE survey_id=$survey_id AND question_id=$question_id";
     $result2 = mysqli_query($con, $sql2);
 	$num_rows = mysqli_num_rows($result2);
-	
+	#echo "DEBUG: num_rows: ".$num_rows. "<br>";
 
-    if($num_rows == 0) 
+    if($num_rows == 0) // If this question is not already associated with a survey, associate it.
     {
 		$sql = "
       INSERT INTO tbl_survey_questions 
       VALUES (null, '$survey_id', '$question_id')
       ";
 
-		
+		// Try inserting the question_id, survey_id combination into the tbl_survey_questions.
 		if (mysqli_query($con, $sql))
 		{
 			$survey_question_id = mysqli_insert_id($con);
