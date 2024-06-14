@@ -28,5 +28,5 @@ Pliki można również umieścić na wybranym serwerze.
 
 <h3>IV. Działanie</h3>
 
-Rejestracja użytkownika: Podanie danych -> Zatwierdzenie -> Przekierowanie do strony logowania<br>
+<b>Rejestracja użytkownika:</b> Podanie danych -> Zatwierdzenie -> Przekierowanie do strony logowania<br>
 Logowanie użytkownika: Wpisanie danych -> Przejście do strony użytkownika -> 
