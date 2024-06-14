@@ -33,7 +33,45 @@ function IsEmpty()
 </script>
 
 <html>
-<!-- html -->
+  <head>
+    <title>Ankieter (Rejestracja)</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/login.css"/>
+    <link rel="stylesheet" href="css/signUp.css"/>
+  </head>
+
+  <body>
+      <div id="logo"><a href="#"><img src="img/logoankieter.png" height="35" width="62.2"></a></div>
+        <div class=container>
+      <div id="signUp">
+
+        <div id="signUpTitle">Rejestracja użytkownika</div>
+        <form id = "signUpForm"  method="post" class="form-inline" name="theForm" action="signup.php">
+
+			<div class="form-group row">
+				<input type="text" class="form-control" name="user_first_name" placeholder="Imię">
+				<input type="text" class="form-control" name="user_last_name" placeholder="Nazwisko">
+			</div><br><hr>
+
+			<div class="form-group row">
+				<input type="text" class="form-control" name="email_address" placeholder="Adres email">
+			</div><br>
+
+			<div class="form-group row">
+				<input type="password" class="form-control" name="user_pass" placeholder="Hasło">
+				<input type="password" class="form-control" name="user_pass2" placeholder="Powtórz hasło">
+			</div><br>
+
+			<a href="index.php"><button type="button" id="backButton" class="btn btn-primary buttonSign row">Powrót</button></a>
+			
+			<button type="submit" id="submitButton" onclick="return IsEmpty();" class="btn btn-primary buttonSign row">Zarejestruj</button>
+
+        </form>
+      </div>
+    </div>
+
 <?php
 
 function NewUser()
@@ -92,7 +130,7 @@ function NewUser()
 			$user_id = mysqli_insert_id($con);
 			echo "Utworzono nowego użytkownika. Numer identyfikacyjny: " . htmlspecialchars($user_id);
 			echo "Za 3 sekundy nastąpi przekierowanie do strony logowania.";
-			// header('Refresh: 3;url=index.php'); //Działa
+			header('Refresh: 3;url=index.php'); //Działa
 			exit();
 		} else
 		{ 	
