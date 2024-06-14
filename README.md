@@ -2,7 +2,7 @@
 Arkadiusz Twarogowski
 Grzegorz Piątkowski 52667
 
-Aplikacja do tworzenia ankiet.
+<h1>Aplikacja do tworzenia ankiet.</h1>
 
 I. Wprowadzenie
 Aplikacja służy do tworzenia prostych ankiet i zbierania odpowiedzi od użytkowników. Została ona napisana w Php i wykorzystuje bazę danych MySQL do przechowywania informacji o użytkownikach oraz ankietach. 
