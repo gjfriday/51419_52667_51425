@@ -25,7 +25,7 @@ mysqli_select_db($con, $dbname);
 
 
 // Pobiera listę ankiet z bazy danych
-echo "<table width='1000' border='1'> <tr><th>Identyfikator ankiety</th><th>Nazwa</th><th>Opis</th><th>Data rozpoczęcia</th><th>Data zakończenia</th></tr>";
+echo "<table width='1000' border='1'> <tr><th>Identyfikator ankiety</th><th>Nazwa</th><th>Opis</th></tr>";
 echo "<caption> <b> Spis ankiet </b> </caption>";
 	
 	$sql="
@@ -42,7 +42,7 @@ echo "<caption> <b> Spis ankiet </b> </caption>";
 		$survey_count++;
 		$survey_names_array[$survey_count] = $row['survey_name'];
 		$survey_id_array[$survey_count] = $row[0];
-		echo "<tr><td>".$row[0]."</td><td>".$row['survey_name']."</td><td>".$row['survey_description']."</td><td>".$row['survey_open_date']."</td><td>".$row['survey_close_date']."</td></tr>";
+		echo "<tr><td>".$row[0]."</td><td>".$row['survey_name']."</td><td>".$row['survey_description']."</td></tr>";
     }
 echo "</table>";
 echo "<br> Liczba ankiet: ".$survey_count."<br>";
@@ -64,7 +64,7 @@ echo "<br> Liczba ankiet: ".$survey_count."<br>";
 echo "<br> Liczba wypełnionych ankiet: ".$survey_completed_count;
 if ($survey_completed_count!=0)
 {
-	echo " Lista wypełnionych ankiet: ";
+	echo "<br> Lista wypełnionych ankiet: ";
 	for ($k=1; $k <= $survey_completed_count; $k++)
 	{
 		echo "$survey_completed_array[$k]";
