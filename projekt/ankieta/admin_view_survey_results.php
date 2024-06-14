@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 	for ($x=1; $x<=$num_rows; $x++)
 	{
-		for ($y=1; $y<=5; $y++) // Change to options count
+		for ($y=1; $y<=5; $y++)
 		{
 			$response_count[$x][$y]=0;
 		}
