@@ -23,13 +23,13 @@ Aplikacja służy do tworzenia prostych ankiet i zbierania odpowiedzi od użytko
 4. Przydziel uprawnienia do bazy danych zgodnie z danymi w pliku db_config.php (lub zmień dane w pliku na właściwe)<br>
 5. Uruchom w XAMPP serwer Apache i bazę danych MySQL<br>
 6. Wpisz w przeglądarce localhost/ankieta w celu przejścia do panelu logowania<br>
-7. W celu przejścia do panelu rejestracji kliknij w odpowiedni link
+7. W celu przejścia do panelu rejestracji kliknij w odpowiedni link<br>
 
 Pliki można również umieścić na wybranym serwerze.
 
 <h3>IV. Działanie</h3>
 
 <b>Rejestracja użytkownika:</b> Podanie danych -> Zatwierdzenie -> Przekierowanie do strony logowania<br>
-<b>Użytkownik: Logowanie użytkownika:</b> Wpisanie danych -> Przejście do strony użytkownika -> Wypełnij ankietę
+<b>Użytkownik: Logowanie użytkownika:</b> Wpisanie danych -> Przejście do strony użytkownika -> Wypełnij ankietę <br>
 <b>Administrator: Logowanie administratora:</b> Wpisanie danych -> Przejście do strony administratora<br>
 <b>Administrator: Utworzenie ankiety:</b> Wybierz "Utwórz ankietę" -> Podaj dane -> Utwórz
