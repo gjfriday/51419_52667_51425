@@ -10,6 +10,7 @@ Aplikacja służy do tworzenia prostych ankiet i zbierania odpowiedzi od użytko
 <h3>II. Wymagania funkcjonalne</h3>
 * użytkownik ma możliwość rejestracji poprzez formularz rejestracyjny<br>
 * użytkownik ma możliwość logowania za pomocą e-mail i hasła<br>
+* użytkownik ma możliwość wypełniania ankiet<br>
 * administrator ma możliwość tworzenia ankiet (jednokrotnego wyboru)<br>
 * administrator ma możliwość tworzenia pytań i dodawania ich do ankiet<br>
 * administrator ma wgląd do podsumowań ankiet<br>
