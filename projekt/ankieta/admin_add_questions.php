@@ -67,6 +67,3 @@ if ($question_content!= "") {
 
 </body>
 </html>
-
-
-</html>
