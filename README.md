@@ -2,7 +2,7 @@
 Arkadiusz Twarogowski 51425<br>
 Grzegorz Piątkowski 52667
 
-<h1>Aplikacja do tworzenia ankiet.</h1>
+<h1 style="color:rgb(255,0,0);">Aplikacja do tworzenia ankiet.</h1>
 
 <h3>I. Wprowadzenie</h3>
 Aplikacja służy do tworzenia prostych ankiet i zbierania odpowiedzi od użytkowników. Została ona napisana w Php (oraz HTML, CSS i javascript) i wykorzystuje bazę danych MySQL do przechowywania informacji o użytkownikach oraz ankietach. 
