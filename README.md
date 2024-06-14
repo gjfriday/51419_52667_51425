@@ -1,5 +1,5 @@
-Łukasz Piastka
-Arkadiusz Twarogowski
+Łukasz Piastka<br>
+Arkadiusz Twarogowski<br>
 Grzegorz Piątkowski 52667
 
 <h1>Aplikacja do tworzenia ankiet.</h1>
