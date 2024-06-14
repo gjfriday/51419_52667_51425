@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") // do końca php
 	$survey_id=$_POST["survey_id_list"];
 	$_SESSION["SURVEY_ID"] = $survey_id;
 }
-echo "<br>surveyId: ".$survey_id."<br>";
+echo "<br>Nr ankiety: ".$survey_id."<br>";
 
 $con = mysqli_connect($servername, $username, $password, $dbname);
 
