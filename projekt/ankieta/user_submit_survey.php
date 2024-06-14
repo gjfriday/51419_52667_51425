@@ -1,18 +1,15 @@
 <?php
 
-session_start();
+	session_start();
 
-//include('/ankiety/config.php');
+	include("config/config.php");
+	include("view/header.php");
+	include("view/user_view.php");
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ankieta";
-
-$user_id = $_SESSION["USER_ID"];
+	$user_id = $_SESSION["USER_ID"];
 ?>
 
-<html>
+		<div id="results">
 
 <?php
 
@@ -54,14 +51,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 			$result1 = mysqli_query($con, $sql1);
 
 			if($result1) {
-				echo "<br>Pytanie: ".$i." odpowiedź dodana do bazy danych!";
+				echo "<br>Survey question: ".$i." response inserted into database successfully!";
 			} else {
-				echo "<br>Błąd: " . $sql1 . "<br>" . $conn->error;
-				echo "<br>Odpowiedź: ".$response[$i];
+				echo "<br>Error: " . $sql1 . "<br>" . $con->error;
+				echo "<br>Response: ".$response[$i];
 			}
 		} else
 		{
-			echo "<br>Pytanie: ".$i." o numerze id: ".$questions_id_list[$i]." bez odpowiedzi.";
+			echo "<br>Question: ".$i." with question id: ".$questions_id_list[$i]." not answered.";
 		}
 	}
 
@@ -75,14 +72,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 			echo "<br><br>Sukces! Ankieta dodana pomyślnie.<br>";
 		} else
 		{
-			echo "<br>Error: " . $sql2 . "<br>" . $conn->error."<br>";
+			echo "<br>Error: " . $sql2 . "<br>" . $con->error."<br>";
 		}
 	}
 
 } 
 
-echo " userId: ".$user_id." surveyId: ".$survey_id." liczba pytań: ".$questions_count."<br>";
+echo " userId: ".$user_id." surveyId: ".$survey_id." questions count: ".$questions_count."<br>";
 
 mysqli_close($con);
 
 ?>
+
+		</div>
+	</body>
+</html>
+
