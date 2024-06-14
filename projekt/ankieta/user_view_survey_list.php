@@ -1,19 +1,17 @@
 <?php
+
 session_start();
 
-//include('/ankiety/config.php');
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ankieta";
+include("config/config.php");
+include("view/header.php");
+include("view/user_view.php");
 
 $userId = $_SESSION["USER_ID"]; 
+
 ?>
 
-<!DOCTYPE html>
-<html>
-<!-- tu będzie layout -->
+		<div id="surveyList">
+
 <?php
 
 $con = mysqli_connect($servername, $username, $password, $dbname);
@@ -54,8 +52,6 @@ echo "<br> Liczba ankiet: ".$survey_count."<br>";
 		WHERE user_id=$userId 
 		ORDER BY survey_id
 		";
-
-var_dump($userId);
 
     $result2 = mysqli_query($con, $sql2);
 	$survey_completed_count=0;
@@ -119,6 +115,24 @@ if ($survey_not_completed_count!=0)
 mysqli_close($con);
 ?>
 
+<br><br>
+Wybierz ankietę i naciśnij "Rozpocznij".
+<form  method="post" action="user_take_survey.php">
+<!-- Wyświetla listę ankiet w menu rozwijalnym -->
+  <select name="survey_id_list">
+<?php for ($i=1; $i<=$survey_not_completed_count; $i++)
+	{?>
+    <option value="<?php echo "$survey_not_completed_array[$i]";?>"><?php echo "$survey_not_completed_array[$i]";?></option>
+    <?php
+	}?>
+  </select>
+
+  <input type="submit"  value="Rozpocznij">
+</form>
+
+		</div>
+	</body>
+</html>
 
   
 </html>
