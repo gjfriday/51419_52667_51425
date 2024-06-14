@@ -16,10 +16,12 @@ Aplikacja służy do tworzenia prostych ankiet i zbierania odpowiedzi od użytko
 * administrator ma wgląd do podsumowań ankiet<br>
 * ankiety przechowywane są w bazie danych<br>
 
-<h3>III. Uruchamianie</h3>
+<h3>III. Uruchamianie (poprzez localhost)</h3>
 1. Zainstaluj XAMPP<br>
 2. Skopiuj katalog ankieta do katalogu htdocs<br>
 3. Skonfiguruj bazę danych(utwórz bazę danych ankieta i zaimportuj plik plik ankieta.sql)<br>
 4. Uruchom w XAMPP serwer Apache i bazę danych MySQL<br>
 5. Wpisz w przeglądarce localhost/ankieta w celu przejścia do panelu logowania<br>
 6. W celu przejścia do panelu rejestracji kliknij w odpowiedni link
+
+Pliki można również umieścić na wybranym serwerze.
