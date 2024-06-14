@@ -51,14 +51,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 			$result1 = mysqli_query($con, $sql1);
 
 			if($result1) {
-				echo "<br>Survey question: ".$i." response inserted into database successfully!";
+				echo "<br>Odpowiedź na pytanie nr ".$i." została zapisana!";
 			} else {
-				echo "<br>Error: " . $sql1 . "<br>" . $con->error;
-				echo "<br>Response: ".$response[$i];
+				echo "<br>Błąd: " . $sql1 . "<br>" . $con->error;
+				echo "<br>Odpowiedź: ".$response[$i];
 			}
 		} else
 		{
-			echo "<br>Question: ".$i." with question id: ".$questions_id_list[$i]." not answered.";
+			echo "<br>Pytanie: ".$i." o nr: ".$questions_id_list[$i]." zostało pominięte.";
 		}
 	}
 
@@ -69,16 +69,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		$result2 = mysqli_query($con, $sql2);
 		if($result2)
 		{
-			echo "<br><br>Sukces! Ankieta dodana pomyślnie.<br>";
+			echo "<br><br>Gratulacje! Ankieta została pomyślnie ukończona.<br>";
 		} else
 		{
-			echo "<br>Error: " . $sql2 . "<br>" . $con->error."<br>";
+			echo "<br>Błąd: " . $sql2 . "<br>" . $con->error."<br>";
 		}
 	}
 
 } 
 
-echo " userId: ".$user_id." surveyId: ".$survey_id." questions count: ".$questions_count."<br>";
+echo " Nr użytkownika: ".$user_id." <br>Nr ankiety: ".$survey_id." <br>Liczba pytań: ".$questions_count."<br>";
 
 mysqli_close($con);
 
@@ -87,4 +87,3 @@ mysqli_close($con);
 		</div>
 	</body>
 </html>
-
