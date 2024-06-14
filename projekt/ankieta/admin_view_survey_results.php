@@ -27,14 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	$sql="SELECT tbl_survey_questions.question_id,
        tbl_questions.question_content,
        tbl_survey_questions.survey_id
-  FROM survey_db.tbl_survey_questions tbl_survey_questions
-       INNER JOIN survey_db.tbl_questions tbl_questions
+  FROM ankieta.tbl_survey_questions tbl_survey_questions
+       INNER JOIN ankieta.tbl_questions tbl_questions
           ON (tbl_survey_questions.question_id = tbl_questions.question_id)
  WHERE (tbl_survey_questions.survey_id = $survey_id)";
 
+
     $result = mysqli_query($con, $sql);
 	$num_rows = mysqli_num_rows($result);
-	
+
 
     if($num_rows == 0) // Wyjście w przypadku braku pytań powiązanych z daną ankietą.
     {
@@ -69,12 +70,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 			   tbl_survey_questions.question_id,
 			   tbl_questions.question_content,
 			   COUNT(tbl_user_questions.response)
-		  FROM ((survey_db.tbl_survey_questions tbl_survey_questions
-				 INNER JOIN survey_db.tbl_surveys tbl_surveys
+		  FROM ((ankieta.tbl_survey_questions tbl_survey_questions
+				 INNER JOIN ankieta.tbl_surveys tbl_surveys
 					ON (tbl_survey_questions.survey_id = tbl_surveys.survey_id))
-				INNER JOIN survey_db.tbl_questions tbl_questions
+				INNER JOIN ankieta.tbl_questions tbl_questions
 				   ON (tbl_survey_questions.question_id = tbl_questions.question_id))
-			   INNER JOIN survey_db.tbl_user_questions tbl_user_questions
+			   INNER JOIN ankieta.tbl_user_questions tbl_user_questions
 				  ON (tbl_user_questions.question_id = tbl_questions.question_id)
 		 WHERE     (tbl_survey_questions.survey_id = $survey_id)
 			   AND (tbl_survey_questions.question_id = $question_id)
@@ -91,14 +92,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		}
     }
 
-	echo "<table width='386' border='1'> <tr><th>S.No.</th><th>Question Id</th><th>Question</th>
-	<th>Response-1</th>
-	<th>Response-2</th>
-	<th>Response-3</th>
-	<th>Response-4</th>
-	<th>Response-5</th>
+	echo "<table width='1000' border='1'> <tr><th>Nr</th><th>Nr pytania</th><th>Pytanie</th>
+	<th>Odp-1</th>
+	<th>Odp-2</th>
+	<th>Odp-3</th>
+	<th>Odp-4</th>
+	<th>Odp-5</th>
 	</tr>";
-	echo "<caption> <b> Responses to questions </b> </caption>";
+	echo "<caption> <b> Odpowiedzi na pytania </b> </caption>";
 	$i=0;
 	while($i<$questions_count)
 	    {
