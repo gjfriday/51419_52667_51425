@@ -37,3 +37,4 @@ Pliki można również umieścić na wybranym serwerze.
 <b>Administrator: Krok 1(Utworzenie ankiety):</b> Wybierz "Utwórz ankietę" -> Podaj dane -> Utwórz<br><br>
 <b>Administrator: Krok 2(Dodawanie pytań):</b> Wybierz "Dodaj pytania" -> Podaj dane -> Dodaj<br><br>
 <b>Administrator: Krok 3(Przyporządkowanie pytań):</b> Wybierz "Przyporządkowanie pytań" -> Wybierz nr ankiety -> Wybierz nr pytania -> Kliknij "Połącz"<br><br>
+<b>Administrator: Krok 4(Wyniki ankiet):</b> Wybierz "Wyniki ankiet" -> Wybierz nr ankiety -> Kliknij "Sprawdź"<br><br>
