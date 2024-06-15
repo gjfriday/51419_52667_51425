@@ -35,7 +35,7 @@ Aktualny status zadań:
 8. user_homepage.php	: AT   : Prosta strona
 9. user_view_survey_list.php : ŁT -> TO DO : Wyświetla ankiety do wypełnienia lub zakończone
 10 user_take_survey.php : AT -> TO DO 
-11. user_submit_survey.php : ŁP ->  TO DO : Odpwiedzi do mySql i komunikat o ukończeniu ankietyInserts response in mysql & shows survey completion is successful.
+11. user_submit_survey.php : ŁP ->  TO DO : Odpwiedzi do mySql i komunikat o ukończeniu ankiety
 12. signup_page.php: ŁP/ AT/ GP
 
 
